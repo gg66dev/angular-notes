@@ -1,0 +1,6 @@
+.left {
+    width: 50%;
+    height: 100px;
+    background: red;
+    float: left;
+}
