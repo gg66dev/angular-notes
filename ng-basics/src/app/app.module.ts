@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import { ExComponentModule } from './ex-component/ex-component.module';
 import { ExServiceModule } from './ex-service/ex-service.module';
+import { ExDataBindingModule } from './ex-data-binding/ex-data-bining.module';
+import { ExDirectivesModule } from './ex-directives/ex-directives.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ExServiceModule } from './ex-service/ex-service.module';
     BrowserModule,
     AppRoutingModule,
     ExComponentModule,
-    ExServiceModule
+    ExServiceModule,
+    ExDataBindingModule,
+    ExDirectivesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { MyListService } from './my-list.service';
 
 @Component({
-  selector: 'using-service-component',
+  selector: 'app-service',
   templateUrl: './using-service.component.html',
   providers: [MyListService]
 })

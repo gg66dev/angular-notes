@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-basics';
+
+  navMenu: Array<Array<string>> = [
+    ['/ex-component', 'Component'],
+    ['/ex-service', 'Service'],
+    ['/ex-data-binding', 'Data Binding'],
+    ['/ex-directives', 'Directives']
+  ];
+
 }

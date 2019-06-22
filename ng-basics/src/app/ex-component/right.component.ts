@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'right-component',
+  selector: 'app-right',
   templateUrl: './right.component.html',
   styleUrls: ['./right.component.css']
 })

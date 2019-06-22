@@ -4,9 +4,8 @@
     ng-basics
   </h1>
 </div>
-<nav>
-  <a routerLink="/ex-component" routerLinkActive="active">component example</a>
-  <a routerLink="/ex-service" routerLinkActive="active">service example</a>
+<nav *ngFor="let item of navMenu">
+  <a [routerLink]="item[0]" routerLinkActive="active">{{ item[1] }}</a>
 </nav>
 
 

@@ -1,3 +1,14 @@
+Reference 
+============
+
+## books
+
+* Building Modern Web Applications using Angular  -- Shravan Kumar Kasagoni 
+
+## online courses
+
+* [udemy] Angular 2 tutorial for beginners 
+
 
 Angular-cli
 ============
@@ -13,8 +24,9 @@ Samples Summary
 ## ng-basics
 
 * components
-* templates
 * services
+* data binding
+
 * modules
 * Directives
 * Property Bindings

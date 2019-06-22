@@ -1,0 +1,50 @@
+<div class="note">
+
+<div>
+    <h1>Interpolation syntax {{ '{' }}{{ '{' }}mesage{{ '}' }}{{ '}' }} </h1>
+    <p>* variable message: {{message}}</p>
+    <p>* variable in input: <input value="{{message}}"> (no change variable in 
+        component) </p>
+    <p>* one way data binding (from Component to Template)</p>
+</div>
+
+<div>
+    <h1>Property binding [prop]="value" </h1>
+    <p>* Work with properties not attributes</p>
+    <p>* Equivalet of Interpolation syntax</p>
+    <p>* variable in input <input [value]="message"></p>
+    <p>* one way data binding </p>
+    <p>* canonical form 'bind-'</p>
+    <p>* variable in input (canonical form) <input bind-value="message"></p>
+</div>
+
+<div>
+    <h1>Attribute binding</h1>
+    <p>starts with the keyword 'attr' following by the same of the attribute</p>
+    <p>set attribute type numeric from component 
+        <input [attr.type]="typeNumeric">
+    </p>
+</div>
+
+<div>
+    <h1>Event Binding (event)="myFunc()"</h1>
+    <p>* <button (click)="showMessage($event)" >show message</button></p>
+    <p>* '$event' attribute is the DOM event object</p>
+    <p>* canonical form 'on-'</p>
+    <p>* using canonical form <button on-click="showMessage($event)" >
+        show message</button></p>
+</div>
+
+<div>
+    <h1>Two way data binding: Forms </h1>
+    <p> * display the properties value on the view, and 
+            when the user update the values on views, we need
+            the to be updated back to properties
+    </p>
+    <p>* add FormsModule to ngModule (ex-data-binding.module.ts)</p>
+    <p>* example [(ngModel)]</p>
+    <p>* otherMessage: {{ otherMessage }}</p>
+    <p> <input [(ngModel)]="otherMessage"> (change variable in the component)</p>
+</div>
+
+</div>

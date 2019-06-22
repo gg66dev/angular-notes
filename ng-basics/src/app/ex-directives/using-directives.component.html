@@ -1,0 +1,47 @@
+<div class="note">
+    <div>
+        <h3>ngIf</h3>
+        <p>* if is true Angular add the content to DOM</p>
+        <p>* if is false the content will be physically remove from the DOM</p>
+        <p>* <span *ngIf="display"> display this</span> </p>
+        <p>* <span *ngIf="!display"> Not display this</span> </p>
+    </div>
+
+    <div>
+        <h3>ngFor</h3>
+        <p>* use to iterate: *ngFor='let item of myList', similar to 'for...in' </p>
+        <p>* <span *ngFor="let item of myList"> {{item}}, </span> </p>
+    </div>
+
+    <div>
+        <h3>ngSwitch</h3>
+        <p>* switch operator</p>
+        <p [ngSwitch]=value >*
+            <span *ngSwitchCase="'value2'">VALUE2</span>
+            <span *ngSwitchCase="'value1'">VALUE1</span>
+            <span *ngSwitchDefault>Default</span>
+        </p>
+    </div>
+
+    <div>
+        <h3>ngStyle</h3>
+        <p>* apply inline styles dinamically</p>
+        <p [ngStyle]=getInlineStyles(4)>* [ngStyle]=getInlineStyles(4) </p>
+        <p [ngStyle]=getInlineStyles(2)>* [ngStyle]=getInlineStyles(2) </p>
+        <p [style.color]="'blue'">* apply value directly to the attribute
+            using [style.color]="'blue'"
+        </p>
+    </div>
+
+    <div><h3>ngClass</h3>
+        <p>* apply inline class dinamically</p>
+        <p>example are defined two css class red and bold, apply if parameter
+            is greater than 3
+        </p>
+        <p [ngClass]=getClasses(4)>* [ngClass]=getClasses(4) </p>
+        <p [ngClass]=getClasses(2)>* [ngClass]=getClasses(2) </p>
+        <p [class.red]="true">* apply class directly
+            using [class.red]="true"
+        </p>
+    </div>
+</div>

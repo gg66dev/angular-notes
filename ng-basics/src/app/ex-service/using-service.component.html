@@ -1,3 +1,17 @@
-        <div *ngFor="let value of values">
+ 
+ <div class="note">
+         <h1>Service</h1>
+         <div>
+             <p>* Define class service with annotation '@Injectable', define 
+                the service methods inside this class. (my-list.service.ts)</p>    
+             <p>* In the component, set the attribute 'providers' of the @component
+                annotation with the value of the service. Then inject the service
+                in the component constructor and use his methods inside 
+                the component. (using-service.component.ts)</p>    
+         </div>
+ </div>
+ 
+ 
+ <div *ngFor="let value of values">
         <p>{{value}}</p>
-        </div>
+  </div>
