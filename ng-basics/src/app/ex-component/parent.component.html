@@ -15,3 +15,14 @@
     <app-left></app-left>
     <app-right></app-right>
 </div>
+<div>
+    <h1>Input properties</h1>
+    <app-using-input [parentValue]="parentValue"></app-using-input>
+</div>
+<div>
+    <h1>Output properties</h1>
+    <p>Emit event from child to update attributes from parent 
+        (using-output.component.ts)</p>
+    <app-using-output (updateValue)="updateValue($event)"></app-using-output>
+    <p>parentCount: {{parentCount}}</p>
+</div>
