@@ -1,0 +1,35 @@
+    <div>
+      <h1>Observables</h1>
+    </div>
+<div>   
+
+    <div>
+        <h3> Observable stream and mapping values </h3>
+        <p>* use of nativeElement to access to the DOM '@ViewChild'</p>
+        <p>* Observable when click button and Observable when change text in input.</p>
+        
+        <input #text />
+        <button #btn >click me</button>
+        <p>{{ message }}</p>
+    </div>
+
+    <div>
+        <h3> Merging Observable streams </h3>
+        <p>Using one subscription method, because combine the two observables using merge</p>
+        <input #text2 />
+        <button #btn2 >click me</button>
+        <p>{{ message2 }}</p>
+
+    </div>
+
+    <div>
+        <h3> Using the Observable.interval() method </h3>
+        <p>Internal observable change text of time every 1 seg</p>
+        <p>{{time}}</p>
+        <p>* Using observable directly in the view require use async pipe</p>
+        <p>{{timer2$ | async}}</p>
+        <p>* using also pipe date to format</p>
+        <p>{{timer2$ | async | date: 'mediumTime'}}</p>
+    </div>
+</div>
+<!--  --->

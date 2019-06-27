@@ -12,7 +12,8 @@ export class AppComponent {
     ['/ex-component', 'Component'],
     ['/ex-service', 'Service'],
     ['/ex-data-binding', 'Data Binding'],
-    ['/ex-directives', 'Directives']
+    ['/ex-directives', 'Directives'],
+    ['/ex-observables', 'Observables']
   ];
 
 }
