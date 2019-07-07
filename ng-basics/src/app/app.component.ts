@@ -14,7 +14,8 @@ export class AppComponent {
     ['/ex-data-binding', 'Data Binding'],
     ['/ex-directives', 'Directives'],
     ['/ex-observables', 'Observables'],
-    ['/ex-forms', 'Forms']
+    ['/ex-forms', 'Forms'],
+    ['/ex-reactive-forms', 'Reactive Forms']
   ];
 
 }

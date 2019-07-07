@@ -1,0 +1,73 @@
+<h1>Reactive forms (model-driven forms)</h1>
+<div class="note">
+    <p>* We directly use the classes FormControl, FormArray, FormBuilder.
+        (require import the module (ReactiveFormsModule))
+    </p>
+    <p>* Also apply validation rules inside the Component class.</p>
+    <form novalidate [formGroup]="registrationForm" 
+        (ngSubmit)=onSubmit(registrationForm.value)>
+        <label>first name</label>
+        <input type="text" formControlName="firstName" > 
+        <label>last name</label>
+        <input type="text" formControlName="lastName" > 
+        <label>email</label>
+        <input type="email" formControlName="email">
+        <div
+            *ngIf="registrationForm.get('email').touched &&
+                   registrationForm.get('email').hasError('required')">
+            the email is required
+        </div>
+        <div
+            *ngIf="registrationForm.get('email').touched &&
+                   registrationForm.get('email').hasError('pattern')">
+            bad email format
+        </div>
+        <p>{{ registrationForm.value | json }}</p>
+        <button type="submit" [disabled]="registrationForm.invalid">
+            display in console</button>
+    </form>
+    <h3>Using FormBuilder</h3>
+    <p>* The FormBuilder class provides a simpler API to deal with FormControl
+         groups.
+    </p>
+    <form novalidate [formGroup]="registrationForm2" 
+        (ngSubmit)=onSubmit2(registrationForm2.value)>
+        <label>first name</label>
+        <input type="text" formControlName="firstName" > 
+        <label>last name</label>
+        <input type="text" formControlName="lastName" > 
+        <label>email</label>
+        <input type="email" formControlName="email">
+        <div
+            *ngIf="registrationForm2.get('email').touched &&
+                   registrationForm2.get('email').hasError('required')">
+            the email is required
+        </div>
+        <div
+            *ngIf="registrationForm2.get('email').touched &&
+                   registrationForm2.get('email').hasError('pattern')">
+            bad email format
+        </div>
+        <p>{{ registrationForm2.value | json }}</p>
+        <button type="submit" [disabled]="registrationForm2.invalid">
+            display in console</button>
+    </form>
+    <h3>Custom validator</h3>
+    <p>* Validator is a simple function which had a parameter AbstractControl
+        and return a object with attribute named as the error code and his value
+        is true if it fails. (my-validators.ts)</p>
+    <p>* validate that name start with g</p>
+    <form novalidate [formGroup]="registrationForm3" 
+        (ngSubmit)=onSubmit2(registrationForm3.value)>
+        <label>first name</label>
+        <input type="text" formControlName="firstName" > 
+        <div
+            *ngIf="registrationForm3.get('firstName').touched &&
+                   registrationForm3.get('firstName').hasError('startWithG')">
+            name must be start with g.
+        </div>
+        <p>{{ registrationForm3.value | json }}</p>
+        <button type="submit" [disabled]="registrationForm3.invalid">
+            display in console</button>
+    </form>
+</div>

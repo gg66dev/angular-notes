@@ -10,6 +10,7 @@ import { ExDataBindingModule } from './ex-data-binding/ex-data-bining.module';
 import { ExDirectivesModule } from './ex-directives/ex-directives.module';
 import { ExObservablesModule } from './ex-observables/ex-observable.module';
 import { ExFormsModule } from './ex-forms/ex-forms.module';
+import { ExReactiveFormsModule } from './ex-reactive-forms/ex-reactive-forms.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ExFormsModule } from './ex-forms/ex-forms.module';
     ExDataBindingModule,
     ExDirectivesModule,
     ExObservablesModule,
-    ExFormsModule
+    ExFormsModule,
+    ExReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

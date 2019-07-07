@@ -7,6 +7,7 @@ import { DataBindingComponent } from './ex-data-binding/data-bindig.component';
 import { UsingDirectivesComponent } from './ex-directives/using-directives.component';
 import { UsingObservablesComponent } from './ex-observables/using-observables.component';
 import { UsingFormsComponent } from './ex-forms/using-forms.component';
+import { UsingReactiveFormsComponent } from './ex-reactive-forms/using-reactive-forms.component';
 
 const routes: Routes = [
   { path: 'ex-component', component: ParentComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'ex-data-binding', component: DataBindingComponent },
   { path: 'ex-directives', component: UsingDirectivesComponent },
   { path: 'ex-observables', component: UsingObservablesComponent },
-  { path: 'ex-forms', component: UsingFormsComponent }
+  { path: 'ex-forms', component: UsingFormsComponent },
+  { path: 'ex-reactive-forms', component: UsingReactiveFormsComponent}
 ];
 
 @NgModule({
