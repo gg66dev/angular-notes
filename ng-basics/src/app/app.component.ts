@@ -13,7 +13,8 @@ export class AppComponent {
     ['/ex-service', 'Service'],
     ['/ex-data-binding', 'Data Binding'],
     ['/ex-directives', 'Directives'],
-    ['/ex-observables', 'Observables']
+    ['/ex-observables', 'Observables'],
+    ['/ex-forms', 'Forms']
   ];
 
 }

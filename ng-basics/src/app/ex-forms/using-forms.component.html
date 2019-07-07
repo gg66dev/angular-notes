@@ -1,0 +1,74 @@
+
+<h1>using forms (template driven forms)</h1>
+<div class="note">
+    <div>
+        <p>* With Template driven forms we not create directly FormControl,
+            FormGroup objects Instead we will use ngModel, ngModelGroup 
+            and ngForm </p>
+        <p>* ngModel directive on the input represents the model object.</p>
+        <p>* With NgModel angular create a FormControl under the hood.</p>
+        <input type="text" 
+            ngModel="write here!"
+            #myMessage="ngModel">
+        <p>{{ myMessage.value }}</p>
+        <p>* bind ngModel to component property (using two-way data binding
+            to update the bound property with the updated value)</p>
+        <input type="text" 
+            [(ngModel)]="myForm.message"
+            #cntrol="ngModel">
+        <p>{{ myForm.message }}</p>
+        <p>*it is not recommended to use two-way data binding in 
+            template driven forms (we have to maintain the state in the template
+            and the component)</p>
+        <p>* We use a ngForm that represent a FormGroup model object</p>    
+        <p>* ngSubmit to submit our form.</p>
+        <form novalidate #formRef="ngForm" 
+              (ngSubmit)=onSubmit(formRef.value)>
+            <input type="text" name="formMessage" 
+                ngModel #formMessageRef="ngModel">
+            <button type="submit">show in console</button>
+        </form>
+        <pre>{{ formRef.value | json }}</pre>
+        <p>* using ngModelGroup. group sub attributes in one atribute</p>
+        <form novalidate #formRef2="ngForm" 
+              (ngSubmit)=onSubmit(formRef2.value)>
+            <div ngModelGroup="fullName" #fullNameRef="ngModelGroup">
+                <label>First name</label>
+                <input type="text" name="firstName" ngModel #firstNameRef="ngModel">
+                <label>Last name</label>
+                <input type="text" name="lastName" ngModel #lastNameRef="ngModel">
+            </div>
+            <label>alias</label>  
+            <input type="text" name="alias" 
+                ngModel #aliasRef="ngModel">
+            <button type="submit">show in console</button>
+        </form>
+        <pre>{{ formRef2.value | json }}</pre>
+    </div>
+</div>
+<h3>validation</h3>
+<div class="note">
+    <p>* required: input require value.</p>
+    <p>* minlength: mimimum length validation.</p>
+    <p>* maxlength: maximum length validation.</p>
+    <p>* pattern: validate value match to regex pattern.</p>
+    <p>* use attribute invalid of ngForm to disable submit botton.</p>
+    <div>
+        <form #formRef3="ngForm" (ngSubmit)=onSubmit(formRef3.value)>
+            <label>require with min 3 chars</label>
+            <input type="text" name="firstName" 
+                ngModel #firstNameRef2="ngModel"
+                required minlength="3">
+            <div *ngIf="firstNameRef2.touched && firstNameRef2?.errors?.minlength">
+            Min chars: {{firstNameRef2.errors?.minlength.requiredLenghth}}
+            actual chars: {{firstNameRef2.errors?.minlength.actualLength}}
+            </div>
+            <button type="submit"
+                [disabled]="formRef3.invalid"
+            >display in console</button>
+        </form>
+
+    </div>
+
+
+</div>

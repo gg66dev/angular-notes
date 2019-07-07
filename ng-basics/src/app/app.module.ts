@@ -9,6 +9,7 @@ import { ExServiceModule } from './ex-service/ex-service.module';
 import { ExDataBindingModule } from './ex-data-binding/ex-data-bining.module';
 import { ExDirectivesModule } from './ex-directives/ex-directives.module';
 import { ExObservablesModule } from './ex-observables/ex-observable.module';
+import { ExFormsModule } from './ex-forms/ex-forms.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ExObservablesModule } from './ex-observables/ex-observable.module';
     ExServiceModule,
     ExDataBindingModule,
     ExDirectivesModule,
-    ExObservablesModule
+    ExObservablesModule,
+    ExFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
