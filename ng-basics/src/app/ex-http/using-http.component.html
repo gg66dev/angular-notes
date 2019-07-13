@@ -1,0 +1,14 @@
+<h1>using http</h1>
+<div class="note">
+    <p>* we need to add HttpClientModule from '@angular/common/http'</p>
+    <p>* use of 'https://jsonplaceholder.typicode.com/' for the example</p>
+    <p>* user structure in user.model.ts</p>
+    <p>
+        * service class in user.service.ts (use Injectable annotation),
+        and is defined as provider in ex-http.module.ts
+    </p>
+    <p>
+        <button (click)="getUsersData()">users data</button>
+    </p>
+    <pre>{{ usersList | json }}</pre>
+</div>

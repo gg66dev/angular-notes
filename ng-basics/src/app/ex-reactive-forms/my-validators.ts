@@ -12,7 +12,7 @@ export class MyValidators {
         return null;
     }
 
-    static isEmptyValue (value) {
+    static isEmptyValue(value) {
         return value == null || typeof value === 'string' && value.length === 0;
     }
 }

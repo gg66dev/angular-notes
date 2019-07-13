@@ -8,6 +8,7 @@ import { UsingDirectivesComponent } from './ex-directives/using-directives.compo
 import { UsingObservablesComponent } from './ex-observables/using-observables.component';
 import { UsingFormsComponent } from './ex-forms/using-forms.component';
 import { UsingReactiveFormsComponent } from './ex-reactive-forms/using-reactive-forms.component';
+import { UsingHttpComponent } from './ex-http/using-http.component';
 
 const routes: Routes = [
   { path: 'ex-component', component: ParentComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'ex-directives', component: UsingDirectivesComponent },
   { path: 'ex-observables', component: UsingObservablesComponent },
   { path: 'ex-forms', component: UsingFormsComponent },
-  { path: 'ex-reactive-forms', component: UsingReactiveFormsComponent}
+  { path: 'ex-reactive-forms', component: UsingReactiveFormsComponent },
+  { path: 'ex-http', component: UsingHttpComponent }
 ];
 
 @NgModule({

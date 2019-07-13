@@ -15,7 +15,8 @@ export class AppComponent {
     ['/ex-directives', 'Directives'],
     ['/ex-observables', 'Observables'],
     ['/ex-forms', 'Forms'],
-    ['/ex-reactive-forms', 'Reactive Forms']
+    ['/ex-reactive-forms', 'Reactive Forms'],
+    ['/ex-http', 'Http']
   ];
 
 }

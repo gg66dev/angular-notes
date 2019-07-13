@@ -11,6 +11,7 @@ import { ExDirectivesModule } from './ex-directives/ex-directives.module';
 import { ExObservablesModule } from './ex-observables/ex-observable.module';
 import { ExFormsModule } from './ex-forms/ex-forms.module';
 import { ExReactiveFormsModule } from './ex-reactive-forms/ex-reactive-forms.module';
+import { ExHttpModule } from './ex-http/ex-http.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ExReactiveFormsModule } from './ex-reactive-forms/ex-reactive-forms.mod
     ExDirectivesModule,
     ExObservablesModule,
     ExFormsModule,
-    ExReactiveFormsModule
+    ExReactiveFormsModule,
+    ExHttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
