@@ -1,0 +1,46 @@
+<h1>Using Routes</h1>
+<div class="note">
+    <p>steps to use routes:</p>
+    <p>* set the base href &lt;base href="/"&gt; </p>
+    <p>* import and use RouterModule</p>
+    <p>* navigation of component require a placeholder. Use of router-outlet
+        directive to show component according route state.
+    </p>
+    <p>* for load multiple components side by side we use named outlets.</p>
+    <p>* define routes array using Routes (app-routing.module.ts)</p>
+    <p>* use of routes with parameters. 'ex-routes/:key'</p>
+    <p>* we can access route parameters using ActivatedRoute (using-routes.default.component.ts)</p>
+    <p>* use navigate method from Router to go to some other route.</p>
+    <div>
+        <div>
+            <p><a [routerLink]="['/ex-routes', keys[0]]">default with key first</a></p>
+            <p><a [routerLink]="['/ex-routes', keys[1]]">default with key second</a></p>
+            <p><a [routerLink]="['/ex-routes', keys[2]]">default with key third</a></p>
+            <p><a [routerLink]="['/ex-routes',{outlets:{secundary:'second'}}]">second</a></p>
+            <p><a [routerLink]="['/ex-routes',{outlets:{secundary:'third'}}]">third</a></p>
+        </div>
+        <router-outlet></router-outlet>
+        <router-outlet name="secundary"></router-outlet>
+    </div>
+</div>
+
+
+
+<!--
+
+ * routes
+ * set base href
+ * import RouterModele
+ * define routes array
+ * use method 'RouterModule.forRoot'
+
+ * using route parameter
+ * RouterOutlet, 
+ * using named RouterOutlet to display component side by dise
+ * navigation using RouterLink
+ * navigation using routerLink
+ * navigation using navigate method and navigateByUrl
+ * using parameters
+ * animation routes
+
+-->

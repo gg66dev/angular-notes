@@ -2,3 +2,7 @@
 .note {
     padding:  10px;
 }
+
+.border {
+    border-style: solid;
+}

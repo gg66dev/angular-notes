@@ -16,7 +16,8 @@ export class AppComponent {
     ['/ex-observables', 'Observables'],
     ['/ex-forms', 'Forms'],
     ['/ex-reactive-forms', 'Reactive Forms'],
-    ['/ex-http', 'Http']
+    ['/ex-http', 'Http'],
+    ['/ex-routes', 'Routes']
   ];
 
 }
