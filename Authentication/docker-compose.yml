@@ -1,0 +1,19 @@
+version: '3'
+      
+#require create volume
+# `docker volume create dbevents`
+
+services:
+  events-db:
+    image: postgres:10.8-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'pass!765!'
+      POSTGRES_DB: 'dbevents'
+    volumes:
+      - dbevents:/var/lib/postgresql/data
+
+volumes:
+  dbevents:
