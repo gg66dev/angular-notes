@@ -12,6 +12,7 @@ import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.ResourceAssembler;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,6 +34,7 @@ public class MainController {
         this.userRepository = userRepository;
     }
 
+    @CrossOrigin(maxAge = 3600)
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody User user) {
         if (user.getEmail() == null || user.getPassword() == null) {
