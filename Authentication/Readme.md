@@ -32,21 +32,21 @@ Endpoint
 
 
 * Save new user 
-    * POST -- `api/register` (tutorial)  -- `api/users` (demo)
+    * POST -- `api/users`
     * receive json in body with the userData (email and password) and save it in the database.
     * return (200) registedUser
 
 * Do login
-    * POST -- `api/login` (tutorial, demo)
+    * POST -- `api/login`
     * receive json in body with the userData (email and password) and check if user exist and password is correct.
     * return (200) and logged user.
 
 * list of events
-    * GET -- `api/events` (tutorial, demo)
+    * GET -- `api/events`
     * return (200) and list of events
 
 * list of specials
-    * GET --  `api/special` (tutorial) -- `api/specials` (demo)
+    * GET -- `api/specials` 
     * return (200) and list of specials
 
 Angular
@@ -55,13 +55,15 @@ Angular
 ## Commands angular-cli
 
 ```
-ng new ng-app -o        # create application. -o is to open browser
-ng g c register         # generate register component
-ng g c login            # generate login component
-ng g c events           # generate events component
-ng g c special-events   # generate special events component
-ng g s auth             # generate auth service
-ng g s event            # generate event service
+ng new ng-app -o            # create application. -o is to open browser
+ng g c register             # generate register component
+ng g c login                # generate login component
+ng g c events               # generate events component
+ng g c special-events       # generate special events component
+ng g s auth                 # generate auth service
+ng g s event                # generate event service
+ng g s token-interceptor    # generate token interceptor service  
+ng g guard auth             # generate guard (choose canActivate interface)
 ```
 
 Authentication
