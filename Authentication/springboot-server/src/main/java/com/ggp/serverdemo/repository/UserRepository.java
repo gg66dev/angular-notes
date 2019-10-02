@@ -13,4 +13,7 @@ public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
     @RestResource(exported = false)
     User findByEmail(String email);
+
+    @RestResource(exported = false)
+    User save(User user);
 }

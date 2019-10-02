@@ -78,3 +78,5 @@ Authentication
     * safe way to represent a set of information between two parties.
     * token composition: header.payload.signature - xxxx.yyyy.zzzz
 
+* Notes about JWT with Spring Security in Folder `jwt-security-demo`, inside `java-webapp-simple-examples` repository.
+
