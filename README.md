@@ -39,7 +39,14 @@ ng g c notes
 * instalo dependencia 'aws-sdk'
 
 ```
-npm install aws-sdk
+npm install aws-sdk --save
 ```
+
+* instalar depencia 'amazon-cognito-identity-js'
+
+```
+npm i amazon-cognito-identity-js --save
+```
+
 
 
