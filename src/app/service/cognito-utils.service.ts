@@ -33,6 +33,7 @@ export class CognitoUtilsService {
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
       IdentityPoolId: this._IDENTITY_POOL_ID
     });
+    AWS.config.update({accessKeyId: 'dummyvalue', secretAccessKey: 'dummyvalue'});
     return new AWSCognito.CognitoUserPool(poolData);
   }
 

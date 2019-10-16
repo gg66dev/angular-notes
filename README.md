@@ -55,3 +55,79 @@ npm i amazon-cognito-identity-js --save
 
 
 ## Configuracion Cognito (AWS)
+
+#### Grupo de usuario
+
+* AWS Consoel > Cognito > Grupo de usuario
+
+* crear grupo de usuario
+    * nombre: mytodolist-development-userPool
+    * seleccionar recorrido por la configuracion.
+
+    * attributos
+        * seleccionar nombre de usuario
+        * como atributos obligatorios
+            * email
+            * family name
+            * given name
+    * politicas
+        * dejar valores por defecto
+    * MFA y verificaciones
+        * dejar valores por defecto
+    * personalizacion del mesaje
+        * dejar valores por defecto
+    * etiquetas
+        * no añadir ninguna etiqueta
+    * dispositivo
+        * NO recordar dispositivo de usuario.
+    * cliente de aplicacion 
+        * completar despues de crear grupo de usuario
+    * desencadenadores
+        * dejar valore por defecto
+
+
+* ir a configuracion general > cliente de aplicacion
+    * elegir nombre: mytodolist-development-userPool-app-client
+    * actualizar el vencimiento del token (dias): 30 
+    * generar clave secreta de cliente (SIN CHECK)
+    * attributos de lectura
+        * ambitos: correo electronico. atributos: (email, email verified, family name, given name, name, preferred username, updated at).
+        * sin checkear ambitos atributos: email, family name, given name, name, preferred username, updated at.
+
+* ir a integracion de aplicacion  > Configuracion del cliente de applicacion
+    * en la configuracion del cliente 'mytodolist-development-userPool-app-client'
+        * checkear seleccionar todo (selecciona cognito user Pool)
+        * direccion de devolucion de llamada: http://localhost:4200
+        * en 'Flujos de OAuth permitidos': checkear 'Authorization code grant'
+        * en 'Ámbitos de OAuth permitidos': checkear 'email', 'openid', 'profile'
+
+
+* ir a integracion de aplicacion  > Nombre del dominio
+    * elegir dominio:  mytodolist-development-ggp
+
+
+
+
+#### Grupo de identidad
+
+* AWS Consoel > Cognito > Grupo de identidad
+    * crea grupo de identidad
+        * definir nombre: mytodolist_development_identityPool
+        * identidades sin identificar: 
+            * dejar sin check
+        * proveedores de autentificacion
+            * seleccionar cognito
+            * setear valor de id del grupo de usuario  (ex: `us-east-1_nZCwIrFzR`)
+            * setear valor de id cliente de applicacion (ex: `44ce6s1okjh7pst2klvf811rdr`)
+        * crear un grupo.
+        * aceptar roles que se crearon para el grupo de identidad.
+
+    * entrar a editar grupo de identidad
+        * en proveedor de autentificacion > seccion de rol autentico
+            * seleccionar Elegir un `rol a partir de un token`.
+                * 'resolucion de rol' seleccionar `usar un rol autenticado predeterminado`.
+        
+
+
+
+
