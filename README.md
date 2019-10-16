@@ -26,3 +26,13 @@ ng g c notes
     - register
     - notes (only with access)
 
+
+## formulario registro
+
+* en register.component.html se crea formulario de registro con campos
+    * - Username
+    * - Password
+    * - Firstname
+    * - Lastname
+    * - Email
+
