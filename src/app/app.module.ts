@@ -7,6 +7,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotesComponent } from './notes/notes.component';
 
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from  '@angular/common/http';
+
+
+import { CognitoUtilsService } from './service/cognito-utils.service';
+import { LocalStorageService } from './service/local-storage.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,9 +23,14 @@ import { NotesComponent } from './notes/notes.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CognitoUtilsService,
+    LocalStorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

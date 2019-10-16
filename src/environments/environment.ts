@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  USER_POOL_ID: '',
+  USER_POOL_DOMAIN_NAME: '',
+  CLIENT_ID: '',
+  IDENTITY_POOL_ID: '',
+  REGION: '',
+  WEB_REDIRECT_URI: 'http://localhost:4200'
 };
 
 /*

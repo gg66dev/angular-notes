@@ -48,5 +48,10 @@ npm install aws-sdk --save
 npm i amazon-cognito-identity-js --save
 ```
 
+* en registration.component.ts se usa funcion 'doRegister' para registrar usuario. 
+    * se llama servicio RegistrationService
+    * se usa ademas servicio CognitoUtils
+    * datos de usuario se guardan en localStorage (se usa LocalStorageService)
 
 
+## Configuracion Cognito (AWS)
