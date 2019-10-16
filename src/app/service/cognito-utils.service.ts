@@ -33,7 +33,7 @@ export class CognitoUtilsService {
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
       IdentityPoolId: this._IDENTITY_POOL_ID
     });
-    AWS.config.update({accessKeyId: 'dummyvalue', secretAccessKey: 'dummyvalue'});
+    //AWS.config.update({accessKeyId: 'dummyvalue', secretAccessKey: 'dummyvalue'});//TODO: borrar si no es requerido.
     return new AWSCognito.CognitoUserPool(poolData);
   }
 
@@ -44,6 +44,16 @@ export class CognitoUtilsService {
 
   public setUserState(userState: UserState) {
     this._localStorageService.set('userState', JSON.stringify(userState));
+  }
+
+  public getCognitoUser() {
+    let username = this._localStorageService.get('userName');
+
+    let userData = {
+      Username: username,
+      Pool: this.getUserPool()
+    };
+    return new AWSCognito.CognitoUser(userData);
   }
 
 }

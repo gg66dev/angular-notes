@@ -13,13 +13,15 @@ import { HttpClientModule } from  '@angular/common/http';
 
 import { CognitoUtilsService } from './service/cognito-utils.service';
 import { LocalStorageService } from './service/local-storage.service';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    NotesComponent
+    NotesComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,

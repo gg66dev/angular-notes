@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { RegistrationService, IRegistration } from '../service/registration.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -21,7 +22,10 @@ export class RegisterComponent implements OnInit {
     email: ''
   };
 
-  constructor(private _registrationService: RegistrationService) { }
+  constructor(
+    private _registrationService: RegistrationService,
+    private _router: Router
+    ) { }
 
   ngOnInit() {
   }
@@ -30,10 +34,7 @@ export class RegisterComponent implements OnInit {
     if (form && form.valid) {
       console.log(form.value);
       this._registrationService.signUp(this.userData).then(() => {
-        
-        console.log("SO FAR SO GOOD");
-
-
+          this._router.navigateByUrl('/confirmation');
       }).catch((err: Error) => {
         alert('Sign-up error');
         console.log(err);

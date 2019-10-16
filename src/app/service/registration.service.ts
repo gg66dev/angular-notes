@@ -23,6 +23,9 @@ export class RegistrationService {
 
   constructor(private _cognitoUtilsService: CognitoUtilsService) { }
 
+  /** 
+   * Registra un nuevo usuario
+  */
   public signUp(data: IRegistration): Promise<void> {
   
     let attributeList: AWSCognito.CognitoUserAttribute[] = [];
@@ -70,5 +73,25 @@ export class RegistrationService {
     });
     return promise;
   }
+
+  /*
+  * Envia codigo de confirmacion ingresado por el usuario para terminar registro
+  */
+ confirmSignUp(confirmationCode: string): Promise<void> {
+  let cognitoUser = this._cognitoUtilsService.getCognitoUser();
+  let promise: Promise<void> = new Promise<void>((resolve, reject) => {
+    cognitoUser.confirmRegistration(confirmationCode, true, (err: Error, data: any) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      this._cognitoUtilsService.setUserState(UserState.SignedIn);
+      resolve(data);
+    });
+  });
+  return promise;  
+ }
+
+
 
 }
