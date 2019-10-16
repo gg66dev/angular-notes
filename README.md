@@ -36,3 +36,10 @@ ng g c notes
     * - Lastname
     * - Email
 
+* instalo dependencia 'aws-sdk'
+
+```
+npm install aws-sdk
+```
+
+
