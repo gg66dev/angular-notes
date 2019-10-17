@@ -135,3 +135,7 @@ npm i amazon-cognito-identity-js --save
 * cuando se retorna con exito el registro, se avanza al formulario de confirmacion.
     * se crea componente confirmacion.
     * se emplea servicio de registro y servicio de cognito-Util para enviar codigo de confirmacion.
+
+
+## Formulario de login
+

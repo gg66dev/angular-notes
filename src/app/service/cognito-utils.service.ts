@@ -22,6 +22,18 @@ export class CognitoUtilsService {
 
   constructor(private _localStorageService: LocalStorageService) { }
 
+  public getRegion(): string {
+    return this._REGION;
+  }
+
+  public getIdentityPoolId(): string {
+    return this._IDENTITY_POOL_ID;
+  }
+
+  public getUserPoolId(): string {
+    return this._USER_POOL_ID;
+  }
+
 
   public getUserPool() {
     // Initialize Cognito User Pool
@@ -35,6 +47,10 @@ export class CognitoUtilsService {
     });
     //AWS.config.update({accessKeyId: 'dummyvalue', secretAccessKey: 'dummyvalue'});//TODO: borrar si no es requerido.
     return new AWSCognito.CognitoUserPool(poolData);
+  }
+
+  public getCognitoIdentityId(): string {
+    return AWS.config.credentials.identityId;
   }
 
 
@@ -54,6 +70,11 @@ export class CognitoUtilsService {
       Pool: this.getUserPool()
     };
     return new AWSCognito.CognitoUser(userData);
+  }
+
+  public getUserId(): string {
+    // Retrieve user ID from local storage. Return null if it does not exist
+    return this._localStorageService.get('userId');
   }
 
 }

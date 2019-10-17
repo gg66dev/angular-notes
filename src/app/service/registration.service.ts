@@ -7,7 +7,6 @@ import { CognitoUtilsService  } from './cognito-utils.service';
 import { UserState } from '../model/UserState';
 
 
-
 export interface IRegistration {
   username?: string;
   password?: string;
