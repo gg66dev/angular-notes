@@ -50,7 +50,7 @@ export class CognitoUtilsService {
   }
 
   public getCognitoIdentityId(): string {
-    return AWS.config.credentials.identityId;
+    return (AWS.config.credentials as AWS.CognitoIdentityCredentials).identityId;
   }
 
 

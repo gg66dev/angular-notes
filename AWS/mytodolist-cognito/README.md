@@ -1,4 +1,14 @@
 
+Data
+=======
+
+* test user
+
+```
+gustavo4 : GUS123gus123!
+```
+
+
 Process
 =========
 
@@ -139,3 +149,16 @@ npm i amazon-cognito-identity-js --save
 
 ## Formulario de login
 
+* ...
+
+## Ocultar/Mostrar opciones cuando se esta logueando
+
+* cuando esta logeado ocultar botones de login y registrar y mostrar boton de logout y notas.
+* mostrar opciones del menu de notas
+
+
+
+Pendientes
+=============
+
+* que si ingresa directamente a login o register y ya esta logeado, redireccionar a notes.

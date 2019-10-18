@@ -6,14 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotesComponent } from './notes/notes.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from  '@angular/common/http';
 
-
 import { CognitoUtilsService } from './service/cognito-utils.service';
 import { LocalStorageService } from './service/local-storage.service';
-import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { GlobalStateService } from './service/global-state.service';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
   ],
   providers: [
     CognitoUtilsService,
-    LocalStorageService
+    LocalStorageService,
+    GlobalStateService
   ],
   bootstrap: [AppComponent]
 })

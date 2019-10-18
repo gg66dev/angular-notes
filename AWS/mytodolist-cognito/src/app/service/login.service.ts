@@ -186,9 +186,10 @@ export class LoginService {
           });
     
           // Call refresh method to authenticate user and get new temp AWS credentials
-          if (AWS.config.credentials.needsRefresh()) {
-            AWS.config.credentials.clearCachedId();
-            AWS.config.credentials.get((err) => {
+          let cognitoIdentityCredentials = (AWS.config.credentials as AWS.CognitoIdentityCredentials);
+          if (cognitoIdentityCredentials.needsRefresh()) {
+            cognitoIdentityCredentials.clearCachedId();
+            cognitoIdentityCredentials.get((err) => {
               if (err) {
                 reject(err);
                 return;
@@ -196,7 +197,7 @@ export class LoginService {
               resolve();
             });
           } else {
-            AWS.config.credentials.get((err) => {
+            cognitoIdentityCredentials.get((err) => {
               if (err) {
                 console.error(err);
                 reject(err);

@@ -3,10 +3,10 @@
 
 <div style="padding: 10px;">
   
-  <a class="btn btn-primary" routerLink="/login" routerLinkActive="active">login</a>
-  <a class="btn btn-primary" routerLink="/register" routerLinkActive="active">register</a>
-  <a class="btn btn-primary" routerLink="/notes" routerLinkActive="active">notes</a>
-  <a class="btn btn-primary">logout</a>
+  <a class="btn btn-primary" *ngIf="globals.userId === ''" routerLink="/login" routerLinkActive="active">login</a>
+  <a class="btn btn-primary" *ngIf="globals.userId === ''" routerLink="/register" routerLinkActive="active">register</a>
+  <a class="btn btn-primary" *ngIf="globals.userId !== ''" routerLink="/notes" routerLinkActive="active">notes</a>
+  <button class="btn btn-primary" *ngIf="globals.userId !== ''" (click)="logout()">logout</button>
 
 </div>
 

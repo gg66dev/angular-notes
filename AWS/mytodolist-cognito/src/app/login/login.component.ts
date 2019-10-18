@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 
-
 import { LoginService, ILogin } from '../service/login.service';
-import { GlobalStateService } from '../service/global-state.service';
+import { GlobalStateService } from '../service/global-state.service'; 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   providers: [
-    LoginService,
-    GlobalStateService 
+    LoginService
   ]
 })
 export class LoginComponent implements OnInit {
@@ -44,8 +42,9 @@ export class LoginComponent implements OnInit {
       .then(() => {
         // Login was successful
         alert("login success");
-        this._globalStateService.userId = this._globalStateService.getUserId();
+        this._globalStateService.loadUserId();
         console.log(this._globalStateService.userId);
+        console.log(this._globalStateService.id);
         this._router.navigateByUrl('/notes');
       }).catch((err: Error): void => {
         alert(`login error ${err.message}`);
