@@ -1,0 +1,16 @@
+<table style="width:50%">
+    <tr>
+      <th>Year</th>
+      <th>Name</th>
+      <th>Director</th>
+      <th>Gender</th>
+      <th>details</th>
+    </tr>
+    <tr *ngFor="let movie of movies">
+      <td>{{ movie.year }}</td>
+      <td>{{ movie.name }}</td>
+      <td>{{ movie.director }}</td>
+      <td>{{ movie.gender }}</td>
+      <td><a> details </a></td>
+    </tr>
+  </table>
