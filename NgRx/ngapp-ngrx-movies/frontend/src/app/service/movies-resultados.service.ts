@@ -24,12 +24,11 @@ export class MoviesResultadosService {
                 const movies = new Array<Movie>();
                 if (resp && resp._embedded && resp._embedded.movies) {
                     for (const object of resp._embedded.movies) {
-                        movies.push(new Movie(object))
+                        movies.push(new Movie(object));
                     }
                 }
                 return movies;
             })
         );
     }
-
 }

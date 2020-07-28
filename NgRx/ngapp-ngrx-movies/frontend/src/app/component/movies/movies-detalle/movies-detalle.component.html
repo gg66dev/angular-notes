@@ -1,1 +1,21 @@
-<p>movies-detalle works!</p>
+
+<table style="width:50%">
+    <tr>
+      <td>year</td>
+      <td>{{ movie.year }}</td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>{{ movie.name }}</td>
+      </tr>
+      <tr>
+        <td>director</td>
+        <td>{{ movie.director }}</td>
+      </tr>
+      <tr>
+        <td>gender</td>
+        <td>{{ movie.gender }}</td>
+      </tr>
+  </table>
+  <button (click)="back()">atras</button>
+

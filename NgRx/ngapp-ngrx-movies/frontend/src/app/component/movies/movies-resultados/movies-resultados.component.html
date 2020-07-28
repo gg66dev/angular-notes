@@ -11,6 +11,6 @@
       <td>{{ movie.name }}</td>
       <td>{{ movie.director }}</td>
       <td>{{ movie.gender }}</td>
-      <td><a> details </a></td>
+      <td><a [routerLink]="['detalle', movie.id]"> details </a></td>
     </tr>
   </table>

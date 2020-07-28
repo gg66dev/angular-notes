@@ -12,6 +12,7 @@ import { MoviesListadoComponent } from './component/movies/movies-listado/movies
 import { MoviesResultadosComponent } from './component/movies/movies-resultados/movies-resultados.component';
 import { MoviesBuscadorService } from './service/movies-buscador.service';
 import { MoviesResultadosService } from './service/movies-resultados.service';
+import { MoviesDetalleService } from './service/movies-detalle.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MoviesResultadosService } from './service/movies-resultados.service';
   ],
   providers: [
     MoviesBuscadorService,
-    MoviesResultadosService
+    MoviesResultadosService,
+    MoviesDetalleService,
   ],
   bootstrap: [AppComponent]
 })

@@ -4,6 +4,7 @@ export interface IGender {
 }
 
 export interface IMovie {
+    id: number;
     year: string;
     name: string;
     director: string;
@@ -16,6 +17,7 @@ export interface IMoviePayload {
 }
 
 export class Movie {
+    id: number;
     year: string;
     name: string;
     director: string;
@@ -25,6 +27,7 @@ export class Movie {
         if (!obj) {
             return;
         }
+        this.id = obj.id;
         this.year = obj.year;
         this.name = obj.name;
         this.director = obj.director;
