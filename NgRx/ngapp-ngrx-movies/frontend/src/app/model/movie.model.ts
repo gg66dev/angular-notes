@@ -1,5 +1,5 @@
 
-export interface IGender {
+interface IGender {
     name: string;
 }
 

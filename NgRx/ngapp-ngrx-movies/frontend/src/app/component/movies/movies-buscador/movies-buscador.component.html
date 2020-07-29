@@ -1,1 +1,23 @@
-<p>movies-buscador works!</p>
+<table style="width:50%">
+    <tr>
+      <td>
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name">
+      </td>
+      <td>
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender">
+          <option disabled selected value> -- select an optio -- </option>
+          <option *ngFor="let gender of genders" [value]="gender.name">{{ gender.name }}</option>
+        </select>
+      </td>
+      <td>
+        <label for="year">Year:</label>
+        <select name="year" id="year">
+          <option disabled selected value> -- select an option -- </option>
+          <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
+      </td>
+      <td><button>search</button></td>
+    </tr>
+</table>
