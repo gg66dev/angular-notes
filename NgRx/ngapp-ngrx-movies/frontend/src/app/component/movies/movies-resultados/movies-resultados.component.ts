@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Movie } from '../../../model/movie.model';
 
 import { MoviesResultadosService } from '../../../service/movies-resultados.service';
+import { SearchParams } from 'src/app/model/search-params.model';
 
 @Component({
   selector: 'app-movies-resultados',
@@ -10,6 +11,46 @@ import { MoviesResultadosService } from '../../../service/movies-resultados.serv
   styleUrls: ['./movies-resultados.component.scss']
 })
 export class MoviesResultadosComponent implements OnInit {
+
+  @Input()
+  set searchParam(searchParam: SearchParams) {
+    if (!searchParam) {
+      return;
+    }
+    if (searchParam.name) {
+      this.movieResultadosService.findMovieByName(searchParam.name)
+      .subscribe(
+        (res) => {
+          this.movies = res;
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    } else if (searchParam.year) {
+      this.movieResultadosService.findMovieByYear(searchParam.year.toString())
+      .subscribe(
+        (res) => {
+          this.movies = res;
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+
+    } else if (searchParam.gender) {
+      this.movieResultadosService.findMovieByGenderName(searchParam.gender)
+      .subscribe(
+        (res) => {
+          this.movies = res;
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+
+    }
+  }
 
   movies = new Array<Movie>();
 

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MoviesBuscadorService } from 'src/app/service/movies-buscador.service';
 import { Gender } from '../../../model/gender.model';
+import { SearchParams } from '../../../model/search-params.model';
 
 @Component({
   selector: 'app-movies-buscador',
@@ -9,9 +10,16 @@ import { Gender } from '../../../model/gender.model';
 })
 export class MoviesBuscadorComponent implements OnInit {
 
+  movieName;
+  movieGenderName;
+  movieYear;
+
   years = new Array<number>();
 
   genders = new Array<Gender>();
+
+  @Output()
+  searchEvent = new EventEmitter<SearchParams>();
 
   constructor(
     private readonly movieBuscadorService: MoviesBuscadorService
@@ -29,6 +37,14 @@ export class MoviesBuscadorComponent implements OnInit {
           console.log(err);
         }
       );
+  }
+
+  doSearch() {
+    this.searchEvent.emit({
+      name: this.movieName,
+      year: this.movieYear,
+      gender: this.movieGenderName
+    });
   }
 
 }

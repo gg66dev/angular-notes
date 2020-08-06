@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchParams } from '../../../model/search-params.model';
 
 @Component({
   selector: 'app-movies-listado',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesListadoComponent implements OnInit {
 
+  searchParam: SearchParams;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSearchEvent(searchParam: SearchParams) {
+    this.searchParam = searchParam;
+    console.log(searchParam);
   }
 
 }

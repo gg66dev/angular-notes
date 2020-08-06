@@ -1,4 +1,4 @@
 
 
-<app-movies-buscador></app-movies-buscador>
-<app-movies-resultados></app-movies-resultados>
+<app-movies-buscador (searchEvent)="onSearchEvent($event)" ></app-movies-buscador>
+<app-movies-resultados [searchParam]="searchParam" ></app-movies-resultados>

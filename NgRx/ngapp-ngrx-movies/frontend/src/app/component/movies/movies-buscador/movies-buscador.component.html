@@ -2,22 +2,22 @@
     <tr>
       <td>
         <label for="name">name:</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name"  [(ngModel)]="movieName">
       </td>
       <td>
         <label for="gender">Gender:</label>
-        <select name="gender" id="gender">
+        <select name="gender" id="gender" [(ngModel)]="movieGenderName">
           <option disabled selected value> -- select an optio -- </option>
           <option *ngFor="let gender of genders" [value]="gender.name">{{ gender.name }}</option>
         </select>
       </td>
       <td>
         <label for="year">Year:</label>
-        <select name="year" id="year">
+        <select name="year" id="year" [(ngModel)]="movieYear">
           <option disabled selected value> -- select an option -- </option>
           <option *ngFor="let year of years" [value]="year">{{ year }}</option>
         </select>
       </td>
-      <td><button>search</button></td>
+      <td><button (click)="doSearch()">search</button></td>
     </tr>
 </table>
