@@ -58,4 +58,11 @@ Samples Summary
 * async validation
 
 
+Examples
+=============
+
+* `/Authentication` : Example of web with authentication using JWT and Spring Security
+* `/AWS/mytodolist-cognito` : Example of web with authentication using Oauth2.0 of AWS Cognito
+	* example based in [this](https://github.com/awslabs/aws-serverless-auth-reference-app.git) other example: 
+
 
