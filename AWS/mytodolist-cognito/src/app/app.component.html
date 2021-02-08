@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<div style="padding: 10px;">
+  
+  <a class="btn btn-primary" *ngIf="globals.userId === ''" routerLink="/login" routerLinkActive="active">login</a>
+  <a class="btn btn-primary" *ngIf="globals.userId === ''" routerLink="/register" routerLinkActive="active">register</a>
+  <a class="btn btn-primary" *ngIf="globals.userId !== ''" routerLink="/notes" routerLinkActive="active">notes</a>
+  <button class="btn btn-primary" *ngIf="globals.userId !== ''" (click)="logout()">logout</button>
+
+</div>
+
+<div style="padding: 50px;">
+  <router-outlet></router-outlet>
+</div>
