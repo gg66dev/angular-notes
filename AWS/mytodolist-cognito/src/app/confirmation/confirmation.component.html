@@ -1,0 +1,15 @@
+<h2>Confirmation</h2>  
+<p>Please check your e-mail and enter your registration code.</p>
+<form #confirmForm="ngForm" >
+  <div class="form-group">
+      <label for="exampleInputEmail1">Registration Code</label>
+      <input [(ngModel)]="registrationCode.code" 
+            name="code" 
+            type="text" 
+            class="form-control" 
+            id="exampleInputUsername1" 
+            placeholder="Enter Code"
+            required>
+  </div>  
+  <button (click)="doConfirmation(confirmForm)" type="submit" class="btn btn-primary">Confirm Sign Up</button>
+  </form>
